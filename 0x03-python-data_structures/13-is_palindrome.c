@@ -21,26 +21,47 @@ int is_palindrome(listint_t **head)
 		tmp = tmp->next;
 
 	member = malloc(sizeof(int) * i);
+	k = 0;
+	tmp = *head;
 
 	/* fill the array with the n member of each node */
-	tmp = *head;
-	for (j = 0; j < i; j++)
+	while (k < i)
 	{
-		member[j] = tmp->n;
+		member[k] = tmp->n;
 		tmp = tmp->next;
+		k++;
 	}
 
-	k = j;
-	/*compare both end of array to test for palindromeness */
-	for (i = 0; i <= j; i++)
+	k = 0;
+	printf("\n");
+
+	while (k < i)
 	{
-		for (j = k; j >= i; j--)
-		{
-			if (member[i] == member[j] && i == j)
-				return (1);
-		}
+		printf("%d ", member[k]);
+		k++;
 	}
 
-	return (0);
+	/*compare both end of array to test for palindromeness */
+	k = i - 1;
+	j = 0;
+	tmp = *head;
+	printf("\n");
+	while (k >= 0)
+	{
+		if (member[k] == tmp->n)
+		{
+			printf("member[%d]: %d and tmp->%d: %d\n", k, member[k], j, tmp->n);
+		}
+		else
+		{
+			return (0);
+		}
+		j++;
+		tmp = tmp->next;
+		k--;
+		continue;
+	}
+
+	return (1);
 }
 
