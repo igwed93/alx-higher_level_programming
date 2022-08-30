@@ -16,6 +16,8 @@ int is_palindrome(listint_t **head)
 
 	if (*head == NULL)
 		return (1);
+	if (tmp->next == NULL)
+		return (1);
 
 	/* get the number of nodes in the list */
 	for (i = 1; tmp->next != NULL; i++)
