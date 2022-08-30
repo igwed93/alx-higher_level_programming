@@ -33,28 +33,15 @@ int is_palindrome(listint_t **head)
 		k++;
 	}
 
-	k = 0;
-	printf("\n");
-
-	while (k < i)
-	{
-		printf("%d ", member[k]);
-		k++;
-	}
-
 	/*compare both end of array to test for palindromeness */
 	k = i - 1;
 	j = 0;
 	tmp = *head;
-	printf("\n");
 	while (k >= 0)
 	{
-		if (member[k] == tmp->n)
+		if (member[k] != tmp->n)
 		{
 			printf("member[%d]: %d and tmp->%d: %d\n", k, member[k], j, tmp->n);
-		}
-		else
-		{
 			return (0);
 		}
 		j++;
