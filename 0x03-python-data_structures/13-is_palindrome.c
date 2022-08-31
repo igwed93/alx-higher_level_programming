@@ -1,5 +1,27 @@
 #include "lists.h"
-#include <string.h>
+
+/**
+ * reverse_listint - Reverses a singly-linked listint_t list.
+ * @head: pointer to the head node of the linked list.
+ *
+ * Return: pointer to the head of the reversed list.
+ */
+listint_t *reverse_list(listint_t **head)
+{
+	listint_t *node = *head, *next, *prev = NULL;
+
+	while (node)
+	{
+		next = node->next;
+		node->next = prev;
+		prev = node;
+		node = next;
+	}
+
+	*head = prev;
+	return (*head);
+}
+
 
 /**
  * is_palindrome - function that checks if a singly linked list
@@ -10,47 +32,42 @@
  */
 int is_palindrome(listint_t **head)
 {
-	int i, j, k;
-	int *member;
-	listint_t *tmp = *head;
+	listint_t *tmp, *rev, *mid;
+	size_t size = 1, i;
 
-	if (*head == NULL)
-		return (1);
-	if (tmp->next == NULL)
+	if (*head == NULLn || (*head)->next == NULL)
 		return (1);
 
+	tmp = *head;
 	/* get the number of nodes in the list */
-	for (i = 1; tmp->next != NULL; i++)
-		tmp = tmp->next;
-
-	member = malloc(sizeof(int) * i);
-	k = 0;
-	tmp = *head;
-
-	/* fill the array with the n member of each node */
-	while (k < i)
+	for (i = 0; tmp->next != NULL; i++)
 	{
-		member[k] = tmp->n;
+		size++;
 		tmp = tmp->next;
-		k++;
 	}
 
-	/*compare both end of array to test for palindromeness */
-	k = i - 1;
-	j = 0;
 	tmp = *head;
-	while (k >= 0)
+	for (i = 0; i < (size / 2) - 1; i++)
+		tmp = tmp->next;
+
+	if ((size % 2) == 0 && tmp->n != tmp->next->n)
+		return (0);
+
+
+	tmp = tmp->next->next;
+	rev = reverse_list(&tmp);
+	mid = rev;
+	
+	tmp = *head;
+	while (rev)
 	{
-		if (member[k] != tmp->n)
-		{
-			printf("member[%d]: %d and tmp->%d: %d\n", k, member[k], j, tmp->n);
+		if (tmp->n != rev->n)
 			return (0);
-		}
-		j++;
 		tmp = tmp->next;
-		k--;
-		continue;
+		rev = rev->next;
 	}
+
+	reverse_list(&mid);
 
 	return (1);
 }
