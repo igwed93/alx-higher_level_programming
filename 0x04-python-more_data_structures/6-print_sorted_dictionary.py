@@ -7,4 +7,3 @@ def print_sorted_dictionary(a_dictionary):
     for k in sorted(d):
         print("{:s}".format(k), end=": ")
         print(a_dictionary.get(k))
-
