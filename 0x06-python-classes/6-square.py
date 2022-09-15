@@ -7,13 +7,13 @@ class Square:
     """ Square Class """
     def __init__(self, size=0, position=(0, 0)):
         """ Private instance attribute """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
         """ Getter for square size """
-        return self.__size
+        return (self.__size)
 
     @size.setter
     def size(self, value):
@@ -28,7 +28,7 @@ class Square:
     @property
     def position(self):
         """ Getter for square position"""
-        return self.__position
+        return (self.__position)
 
     @position.setter
     def position(self, value):
@@ -41,17 +41,17 @@ class Square:
             self.__position = value
 
     def area(self):
-        """ Public intance method """
-        return self.__size ** 2
+        """ Area of a square """
+        return (self.__size ** 2)
 
     def my_print(self):
-        """ Public instance method """
+        """ Print the area of a square """
         if self.__size == 0:
             print("")
             return
 
         [print("") for i in range(0, self.__position[1])]
-        for i in range(self.__size):
+        for i in range(0, self.__size):
             [print(" ", end="") for j in range(0, self.__position[0])]
             [print("#", end="") for k in range(0, self.__size)]
             print("")
