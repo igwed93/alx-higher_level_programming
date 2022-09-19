@@ -2,7 +2,7 @@
 
 """
 Define a class Rectangle with private attribute width and height,
-and public area and perimeter methods
+and public area and perimeter methods, and allows printing #'s
 """
 
 
@@ -65,6 +65,13 @@ class Rectangle:
         if self.__width == 0 or self.__height == 0:
             return 0
         return (2 * (self.__width + self.__height))
+
+    def __str__(self):
+        """ string representation of a rectangle """
+        if self.__width == 0 or self.__height == 0:
+            return ("")
+        r = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        return r
 
 
 if __name__ == "__main__":
