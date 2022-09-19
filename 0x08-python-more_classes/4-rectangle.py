@@ -21,6 +21,7 @@ class Rectangle:
         area(self)
         perimeter(self)
         __str__(self)
+        __rep__(self)
     """
     def __init__(self, width=0, height=0):
         """ private instance attribute """
@@ -73,6 +74,10 @@ class Rectangle:
             return ("")
         r = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return r
+
+    def __repr__(self):
+        """ string representation to create new instance """
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
 
 if __name__ == "__main__":
