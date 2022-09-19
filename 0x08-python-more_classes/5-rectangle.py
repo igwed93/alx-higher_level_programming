@@ -21,7 +21,8 @@ class Rectangle:
         area(self)
         perimeter(self)
         __str__(self)
-        __rep__(self)
+        __repr__(self)
+        __del__(self)
     """
     def __init__(self, width=0, height=0):
         """ private instance attribute """
@@ -78,6 +79,10 @@ class Rectangle:
     def __repr__(self):
         """ string representation to recreate new instance """
         return "Rectangle({:d}, {:d})".format(self.width, self.height)
+
+    def __del__(self):
+        """ deletes an instance of Rectangle """
+        print("{:s}...".format("Bye rectangle"))
 
 
 if __name__ == "__main__":
