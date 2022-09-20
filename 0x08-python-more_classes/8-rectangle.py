@@ -3,7 +3,8 @@
 """
 Define a class Rectangle with private attribute width and height,
 and public area and perimeter methods, and allows printing using any given symbol,
-and deletes, and has a public attribute to keep track of number of instances.
+and deletes, and has a public attribute to keep track of number of instances, and
+has static method that returns the bigger rectangle out of two given
 """
 
 
@@ -31,6 +32,7 @@ class Rectangle:
         __str__(self)
         __repr__(self)
         __del__(self)
+        bigger_or_equal(rect_1, rect_2)
     """
     number_of_instances = 0
     print_symbol = "#"
@@ -97,6 +99,16 @@ class Rectangle:
         """ deletes an instance of Rectangle """
         print("{:s}...".format("Bye rectangle"))
         type(self).number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        if type(rect_1) is not Rectangle:
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        elif type(rect_2) is not Rectangle:
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        elif rect_1.area() >= rect_2.area():
+            return rect_1
+        return rect_2
 
 
 if __name__ == "__main__":
