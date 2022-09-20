@@ -2,9 +2,10 @@
 
 """
 Define a class Rectangle with private attribute width and height,
-and public area and perimeter methods, and allows printing using any given symbol,
-and deletes, and has a public attribute to keep track of number of instances, and
-has static method that returns the bigger rectangle out of two given
+and public area and perimeter methods, and allows printing using any given
+symbol and deletes, and has a public attribute to keep track of number of
+instances, and has static method that returns the bigger rectangle out of
+two given.
 """
 
 
