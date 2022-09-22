@@ -1,0 +1,63 @@
+# run test with ``python3 -m doctest -v ./tests/3-say_my_name.txt``
+
+===========================
+HOW TO USE 3-say_my_name.py
+===========================
+
+This module defines a name printing function ``say_my_name(first_name, last_name="")``
+
+
+First import method to test
+===========================
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+
+Usage:
+======
+```say_my_name(first_name, last_name="")``` prints the message My name is <first name> <last name>
+
+
+SUCCESS CASES:
+==============
+
+Test args containing strings alone
+::
+	>>> say_my_name("Julius", "Ederson")
+	My name is Julius Ederson
+	>>> say_my_name("Daniel", "Igwe")
+	My name is Daniel Igwe
+
+Test only one string arg
+::
+	Note: that last_name is initialized to an empty string
+
+	>>> say_my_name("Diya")
+	My name is Diya 
+	>>> say_my_name("Deborah")
+	My name is Deborah 
+
+Test args as empty strings
+::
+	>>> say_my_name("")
+	My name is  
+
+FAIL SUCCESS:
+=============
+
+Test args containing strings and integers
+::
+	>>> say_my_name(1, "Edward")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+	>>> say_my_name("Diya", 20)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+Test args as None
+::
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
