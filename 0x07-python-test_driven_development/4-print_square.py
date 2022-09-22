@@ -3,6 +3,7 @@
 function that prints a square using #'s to the stdout
 """
 
+
 def print_square(size):
     """
     prints a square with #'s
