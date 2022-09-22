@@ -18,6 +18,7 @@ def print_square(size):
         raise ValueError("size must be an integer")
 
     if size == 0:
-        print(" ")
-    for index in range(size):
-        print("#" * size)
+        print("", end="")
+    for rows in range(size):
+        [print("#", end="") for i in range(size)]
+        print("")
