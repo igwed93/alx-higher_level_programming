@@ -1,0 +1,77 @@
+# run test with ``python3 -m doctest -v ./tests/4-print_square.txt``
+
+============================
+HOW TO USE 4-print_square.py
+============================
+
+This module defines a square printing function ``def print_square(size)``
+
+
+First import method to test
+===========================
+>>> print_square = __import__('4-print_square').print_square
+
+
+Usage:
+======
+```print_square = __import__('4-print_square').print_square``` prints a square using #'s
+
+
+SUCCESS CASES:
+==============
+
+Test args containing ints
+::
+	>>> print_square(10)
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	##########
+	>>> print_square(2)
+	##
+	##
+ 
+
+FAIL SUCCESS:
+=============
+
+Test args containing strings
+::
+	>>> print_square("Ten")
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Test args as None
+::
+	>>> print_square(None)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Test args as unsigned int
+::
+	>>> print_square(-10)
+	Traceback (most recent call last):
+	...
+	ValueError: size must be >= 0
+
+Test args as float
+::
+	>>> print_square(-6.5)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
+
+Test args as unsigned float
+::
+	>>> print_square(6.5)
+	Traceback (most recent call last):
+	...
+	TypeError: size must be an integer
