@@ -31,6 +31,7 @@ Test signed and unsigned ints
 	-4
 	>>> print(add_integer(3, -1))
 	2
+
 Test floating point values
 ::
 	>>> print(add_integer(3.0, 2.8))
@@ -38,7 +39,7 @@ Test floating point values
 	>>> print(add_integer(-3.5, 4.3))
 	1
 
-Note that floats are casted to ints before the operation
+	Note that floats are casted to ints before the operation
 ::
 	>>> print(add_integer(1.2, 2.4))
 	3
@@ -56,7 +57,7 @@ Test string values
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
-	>>> print(add_integer(10, "software")
+	>>> print(add_integer(10, "software"))
 	Traceback (most recent call last):
 	...
 	TypeError: b must be an integer
@@ -93,17 +94,17 @@ Test other data types
 Test max/min numbers Python can handle ("inf" is infinity)
 ::
 	>>> print(add_integer(float("inf")))
-     	Traceback (most recent call last):
-     	...
-     	OverflowError: cannot convert float infinity to integer
-     	>>> print(add_integer(float("-inf")))
-     	Traceback (most recent call last):
-     	...
-     	OverflowError: cannot convert float infinity to integer
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
+	>>> print(add_integer(float("-inf")))
+	Traceback (most recent call last):
+	...
+	OverflowError: cannot convert float infinity to integer
 
 Test special float NaN in Python (not a number)
 ::
-     	>>> print(add_integer(float("NaN")))
-     	Traceback (most recent call last):
-     	...
-     	ValueError: cannot convert float NaN to integer
+	>>> print(add_integer(float("NaN")))
+	Traceback (most recent call last):
+	...
+	ValueError: cannot convert float NaN to integer
