@@ -1,9 +1,17 @@
 #!/usr/bin/python3
+"""
+defines a function that divides every element of a matrix
+"""
+
+
 def matrix_divided(matrix, div):
+    msg = "matrix must be a matrix (list of lists) of integers/floats"
+    if matrix == [[]]:
+        raise TypeError(msg)
     for row in matrix:
         for e in row:
             if not (isinstance(e, int) or isinstance(e, float)):
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
+                raise TypeError(msg)
     row_length = len(matrix[0])
     for row in matrix:
         if len(row) != row_length:
@@ -11,7 +19,7 @@ def matrix_divided(matrix, div):
     if not (isinstance(div, int) or isinstance(div, float)):
         raise TypeError("div must be a number")
     if div == 0:
-        raise ZeroDivisionError("div must be a number")
+        raise ZeroDivisionError("division by zero")
 
     result = []
 
