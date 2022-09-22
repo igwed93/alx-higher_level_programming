@@ -5,6 +5,9 @@ defines a function that divides every element of a matrix
 
 
 def matrix_divided(matrix, div):
+    """
+    Returns a new matrix with dividends
+    """
     msg = "matrix must be a matrix (list of lists) of integers/floats"
     if matrix == [[]]:
         raise TypeError(msg)
