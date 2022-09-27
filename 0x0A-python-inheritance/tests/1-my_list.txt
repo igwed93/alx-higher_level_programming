@@ -1,4 +1,4 @@
-# run test with pythoni3 -m doctest -v ./tests/1-my_list.txt
+# run test with python3 -m doctest -v ./tests/1-my_list.txt
 
 First import module to test
 ===========================
@@ -61,11 +61,11 @@ Test sorting a list of strings using its public method
     >>> my_list.append("girl")
     >>> my_list.append("woman")
     >>> print(my_list)
-    ["boy", "man", "girl", "woman"]
+    ['boy', 'man', 'girl', 'woman']
     >>> my_list.print_sorted()
     ['boy', 'girl', 'man', 'woman']
     >>> print(my_list)
-    ["boy", "man", "girl", "woman"]
+    ['boy', 'man', 'girl', 'woman']
     
 Test list with only one element
 ::
@@ -118,4 +118,4 @@ Test sorting a list of different types using its public method
     >>> my_list.print_sorted()
     Traceback (most recent call last):
     ...
-    TypeError: '<' not supported between instances of 'str' and 'int'
+    TypeError: '<' not supported between instances of 'int' and 'str'
