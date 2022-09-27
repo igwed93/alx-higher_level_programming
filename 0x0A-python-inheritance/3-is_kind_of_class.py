@@ -5,7 +5,7 @@ returns True if object is exactly an instance of specified class
 """
 
 
-def is_same_class(obj, a_class):
+def is_kind_of_class(obj, a_class):
     """
     Notes:
         use type() to get specific class
@@ -14,4 +14,4 @@ def is_same_class(obj, a_class):
     Retrun:
         True if obj is exactly an instance of specified class
     """
-    return (type(obj) == a_class)
+    return (isinstance(obj, a_class))
