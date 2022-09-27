@@ -14,8 +14,8 @@ class MyInt(int):
     __ne__(self, other)
     """
     def __init__(self, val):
-       """ initialize val """
-       self.val = val
+        """ initialize val """
+        self.val = val
 
     def __eq__(self, other):
         """
