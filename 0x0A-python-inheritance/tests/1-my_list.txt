@@ -1,0 +1,65 @@
+# run test with pythoni3 -m doctest -v ./tests/1-my_list.txt
+
+First import module to test
+===========================
+>>> MyList = __import__('1-my_list').MyList
+
+
+SUCCESS CASES:
+==============
+
+Test appending ints to MyList()::
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(3)
+    >>> print(my_list)
+    [1, 4, 3]
+
+Test appending other data types to MyList()::
+    >>> my_list = MyList()
+    >>> my_list.append("data")
+    >>> my_list.append(1.76)
+    >>> my_list.append([1, 2, 3])
+    >>> print(my_list)
+    ['data', 1.76, [1, 2, 3]]
+
+Test sorting a list of ints using its public method::
+    >>> my_list = MyList()
+    >>> my_list.append(1)
+    >>> my_list.append(4)
+    >>> my_list.append(2)
+    >>> my_list.append(3)
+    >>> my_list.append(5)
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+    >>> my_list.print_sorted()
+    [1, 2, 3, 4, 5]
+    >>> print(my_list)
+    [1, 4, 2, 3, 5]
+
+Test sorting a list of strings using its public method::
+    >>> my_list = MyList()
+    >>> my_list.append("boy")
+    >>> my_list.append("man")
+    >>> my_list.append("girl")
+    >>> my_list.append("woman")
+    >>> print(my_list)
+    ["boy", "man", "girl", "woman"]
+    >>> my_list.print_sorted()
+    ['boy', 'girl', 'man', 'woman']
+
+
+FAIL CASES:
+===========
+Test sorting a list of different types using its public method::
+    >>> my_list = MyList()
+    >>> my_list.append("data")
+    >>> my_list.append(1)
+    >>> my_list.append([2, "man"])
+    >>> print(my_list)
+    ['data', 1, [2, 'man']]
+    >>> my_list.print_sorted()
+    Traceback (most recent call last):
+    ...
+    TypeError: '<' not supported between instances of 'str' and 'int'
