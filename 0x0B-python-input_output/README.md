@@ -1,7 +1,7 @@
 **0x0B. Python - Input/Output**
 
 
-**In this project, I learned how to open a file, read from it, and aslo write to to it.**
+**In this project, I learned how to open a file, read from it, and aslo write to it.**
 
 * When opening a textfile for reading or writing always include the encoding type.
 
