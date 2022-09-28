@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+""" module that contains a function that reads a file to stdout"""
+
+
 def read_file(filename=""):
+    """ reads a file to the stdout stream """
     if not filename:
         return
 
