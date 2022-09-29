@@ -7,6 +7,6 @@ import json
 
 def to_json_string(my_obj):
     """ returns the JSON representation of an object """
-    if not my_obj:
+    if my_obj == None:
         return
     return json.dumps(my_obj)
