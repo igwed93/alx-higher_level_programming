@@ -22,7 +22,6 @@ def pascal_triangle(n):
     return (triangle)
 
 
-
 def comb(r):
     """finds the combination of r
     Args: r
@@ -38,6 +37,7 @@ def comb(r):
         c = int(factorial(r) / (factorial(j) * factorial(r-j)))
         com.append(c)
     return com
+
 
 def factorial(n):
     """finds the factorial of n
