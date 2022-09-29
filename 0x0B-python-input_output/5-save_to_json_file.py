@@ -16,4 +16,4 @@ def save_to_json_file(my_obj, filename):
     if my_obj is None or filename is None:
         return
     with open(filename, mode="w", encoding="utf-8") as f:
-        json.dumps(my_obj, f)
+        json.dump(my_obj, f)
