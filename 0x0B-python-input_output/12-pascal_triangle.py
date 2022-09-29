@@ -28,7 +28,7 @@ def comb(r):
     Args: r
     Returns:
         A list containing the combination
-        of x
+        of r
     """
     if type(r) != int:
         return
