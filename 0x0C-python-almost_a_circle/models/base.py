@@ -16,6 +16,7 @@ class Base:
         to_json_string(list_dictionaries)
         save_to_file(cls, list_objs)
         from_json_string(json_string)
+        create(cls, **dictionary)
     """
     __nb_objects = 0  # public class attribute
 
@@ -56,6 +57,21 @@ class Base:
         if json_string is None or not json_string:
             return []
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ returns an instance with all attributes set """
+        from models.rectangle import Rectangle
+        from models.square import Square
+
+        if cls is Rectangle:
+            new = Rectangle(1, 2)
+        elif cls is Square:
+            new = Square(3)
+        else:
+            new = None
+        new.update(**dictionary)
+        return new
 
 
 if __name__ == "__main__":
