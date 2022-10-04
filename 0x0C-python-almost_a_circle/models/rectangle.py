@@ -12,7 +12,9 @@ class Rectangle(Base):
             x - (private)
             y - (private)
         Methods:
-            __init__()
+            __init__(self, width, height, x, y, id)
+            area(self)
+            validate_integer(self, name, value, eq)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__ magic """
@@ -71,3 +73,7 @@ class Rectangle(Base):
     def y(self, value):
         self.validate_integer("y", value)
         self.__y = value
+
+    def area(self):
+        """ area of rectangle """
+        return self.__width * self.__height
