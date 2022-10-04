@@ -16,6 +16,7 @@ class Square(Rectangle):
             __str__(self)
             size(self)
             size(self, value)
+            update(self, *args, **kwargs)
     """
     def __init__(self, size, x=0, y=0, id=None):
         """ init magic """
@@ -69,6 +70,10 @@ class Square(Rectangle):
                     self.x = v
                 elif k == "y":
                     self.y = v
+
+    def to_dictionary(self):
+        """dictionary rep of square"""
+        return {"id": self.id, "size": self.width, "x": self.x, "y": self.y}
 
     def __str__(self):
         """ string rep of square """
