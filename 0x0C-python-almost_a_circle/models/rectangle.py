@@ -27,6 +27,7 @@ class Rectangle(Base):
             __str__(self)
             __update(self, *args)
             update(self, *args, **kwargs)
+            to_dictionary(self)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__ magic """
@@ -121,6 +122,11 @@ class Rectangle(Base):
             self.__update(*args)
         elif kwargs:
             self.__update(**kwargs)
+
+    def to_dictionary(self):
+        """dictionary representation of rectangle"""
+        return {"id": self.id, "width": self.__width,
+                "height": self.__height, "x": self.__x, "y": self.__y}
 
 
 if __name__ == "__main__":
