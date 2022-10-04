@@ -13,8 +13,17 @@ class Rectangle(Base):
             y - (private)
         Methods:
             __init__(self, width, height, x, y, id)
+            width(self)
+            width(self, value)
+            height(self)
+            height(self, value)
+            x(self)
+            x(self, value)
+            y(self)
+            y(self, value)
             area(self)
             validate_integer(self, name, value, eq)
+            display(self)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__ magic """
@@ -77,3 +86,12 @@ class Rectangle(Base):
     def area(self):
         """ area of rectangle """
         return self.__width * self.__height
+
+    def display(self):
+        """ display rectangle """
+        rep = "#" * self.__width
+        [print(rep) for i in range(self.__height)]
+
+
+if __name__ == "__main__":
+    Rectangle()
