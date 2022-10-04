@@ -92,6 +92,12 @@ class Rectangle(Base):
         rep = "#" * self.__width
         [print(rep) for i in range(self.__height)]
 
+    def __str__(self):
+        """ string rep of rectangle """
+        return "[{}] ({}) {}/{} - {}/{}". \
+            format(type(self).__name__, self.id, self.x,
+                   self.y, self.width, self.height)
+
 
 if __name__ == "__main__":
     Rectangle()
