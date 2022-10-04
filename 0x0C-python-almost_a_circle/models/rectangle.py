@@ -25,7 +25,8 @@ class Rectangle(Base):
             validate_integer(self, name, value, eq)
             display(self)
             __str__(self)
-            update(self, *args)
+            __update(self, *args)
+            update(self, *args, **kwargs)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__ magic """
@@ -101,8 +102,8 @@ class Rectangle(Base):
             format(type(self).__name__, self.id, self.x,
                    self.y, self.width, self.height)
 
-    def update(self, id=None, width=None, height=None, x=None, y=None):
-        """ update attributes """
+    def __update(self, id=None, width=None, height=None, x=None, y=None):
+        """ update instance attributes via */**args """
         if id is not None:
             self.id = id
         if width is not None:
@@ -113,6 +114,13 @@ class Rectangle(Base):
             self.x = x
         if y is not None:
             self.y = y
+
+    def update(self, *args, **kwargs):
+        """ update instance attributes via */**args """
+        if args:
+            self.__update(*args)
+        elif kwargs:
+            self.__update(**kwargs)
 
 
 if __name__ == "__main__":
