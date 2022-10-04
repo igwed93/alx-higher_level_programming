@@ -24,6 +24,7 @@ class Rectangle(Base):
             area(self)
             validate_integer(self, name, value, eq)
             display(self)
+            __str__(self)
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__ magic """
@@ -89,8 +90,9 @@ class Rectangle(Base):
 
     def display(self):
         """ display rectangle """
-        rep = "#" * self.__width
-        [print(rep) for i in range(self.__height)]
+        rep = "\n" * self.y + \
+            (" " * self.x + "#" * self.width + "\n") * self.height
+        print(rep, end='')
 
     def __str__(self):
         """ string rep of rectangle """
