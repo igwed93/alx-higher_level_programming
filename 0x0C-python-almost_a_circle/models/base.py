@@ -15,6 +15,7 @@ class Base:
         __init__()
         to_json_string(list_dictionaries)
         save_to_file(cls, list_objs)
+        from_json_string(json_string)
     """
     __nb_objects = 0  # public class attribute
 
@@ -48,6 +49,13 @@ class Base:
         filename = cls.__name__ + ".json"
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation """
+        if json_string is None or not json_string:
+            return []
+        return json.loads(json_string)
 
 
 if __name__ == "__main__":
