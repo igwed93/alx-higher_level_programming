@@ -69,10 +69,12 @@ class Square(Rectangle):
                     self.x = v
                 elif k == "y":
                     self.y = v
-        
-        
 
     def __str__(self):
         """ string rep of square """
         return "[{}] ({}) {}/{} - {}".\
             format(type(self).__name__, self.id, self.x, self.y, self.size)
+
+
+if __name__ == "__main__":
+    Square()
