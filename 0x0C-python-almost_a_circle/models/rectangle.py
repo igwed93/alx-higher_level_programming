@@ -17,9 +17,16 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ __init__ magic """
         super().__init__(id)
+        self.validate_integer("width", width, eq=False)
         self.width = width
+
+        self.validate_integer("height", height, eq=False)
         self.height = height
+
+        self.validate_integer("x", x, eq=False)
         self.x = x
+
+        self.validate_integer("y", y, eq=False)
         self.y = y
 
     def validate_integer(self, name, value, eq=True):
