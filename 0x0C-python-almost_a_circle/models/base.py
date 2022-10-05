@@ -17,6 +17,7 @@ class Base:
         save_to_file(cls, list_objs)
         from_json_string(json_string)
         create(cls, **dictionary)
+        load_from_file(cls)
     """
     __nb_objects = 0  # public class attribute
 
@@ -47,7 +48,7 @@ class Base:
             return
         if list_objs is not None:
             list_objs = [obj.to_dictionary() for obj in list_objs]
-        filename = cls.__name__ + ".json"
+        filename = "{}.json".format(cls.__name__)
         with open(filename, mode="w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
 
@@ -72,6 +73,17 @@ class Base:
             new = None
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ returns a list of instances """
+        from os import path
+        file = "{}.json".format(cls.__name__)
+        if not path.isfile(file):
+            return []
+        with open(file, "r", encoding="utf-8") as f:
+            return [cls.create(**arg) for arg in
+                    cls.from_json_string(f.read())]
 
 
 if __name__ == "__main__":
