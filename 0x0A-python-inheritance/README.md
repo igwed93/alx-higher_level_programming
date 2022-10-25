@@ -1,7 +1,8 @@
-**0x0A. Python - Inheritance**
+# 0x0A. Python - Inheritance
 
-Inheritance is a process of obtaining properties and characteristics(variables and methods) of another class. In this hierarchical order, the class which inherits another class is called subclass or child class, and the other class is the parent class.
-Parent class
+**Inheritance** is a process of obtaining properties and characteristics(variables and methods) of another class. In this hierarchical order, the class which inherits another class is called **subclass or child class**, and the other class is the **parent class**.
+
+**Parent class**
 
 This is the class being inherited from, also called base class.
 
