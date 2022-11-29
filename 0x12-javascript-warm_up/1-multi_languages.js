@@ -3,7 +3,7 @@
 /* a script that prints 3 lines */
 
 const myCLang = 'C is fun';
-const myPython = 'Pyhton is cool';
+const myPython = 'Python is cool';
 const myJava = 'JavaScript is amazing';
 
 const myArray = [myCLang, myPython, myJava];
