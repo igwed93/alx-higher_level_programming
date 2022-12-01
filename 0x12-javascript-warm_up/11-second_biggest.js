@@ -5,6 +5,13 @@
 const myArray = process.argv.slice(2, process.argv.length);
 let index;
 
+/* chang every element of myArray to int */
+
+const parsedArray = [];
+for (const e of myArray) {
+  parsedArray.push(parseInt(e));
+}
+
 function Max (array) {
   const max = [0, 0];
   let i = 0;
@@ -22,8 +29,8 @@ function Max (array) {
 if (myArray.length < 2) {
   console.log(0);
 } else {
-  index = Max(myArray);
-  myArray.splice(index, 1);
-  index = Max(myArray);
-  console.log(myArray[index]);
+  index = Max(parsedArray);
+  parsedArray.splice(index, 1);
+  index = Max(parsedArray);
+  console.log(parsedArray[index]);
 }
