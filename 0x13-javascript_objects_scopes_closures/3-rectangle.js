@@ -15,7 +15,7 @@ module.exports = class Rectangle {
     let str = 'X';
     for (let j = 1; j < this.width; j++) {
       str += 'X';
-    };
+    }
 
     while (i < this.height) {
       console.log(str);
