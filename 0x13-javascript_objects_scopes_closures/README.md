@@ -2,7 +2,7 @@
 JavaScript is an object-oriented programming language, and what makes it more amazing to implement is that it's quite similar to other object-oriented programming languages like Python. In addition, just as in python, everything in JavaScript is an object.
 
 **Concepts Learned:**
-- creating an object in JavaScript: In simple terms, an object is created the moment you instantiate any variable in JavaScript. To be more explicit, objects can be created in JavaScript by initializing various key-value pairs enclosed in curly brackets to a variable.
+- **creating an object in JavaScript**: In simple terms, an object is created the moment you instantiate any variable in JavaScript. To be more explicit, objects can be created in JavaScript by initializing various key-value pairs enclosed in curly brackets to a variable.
 
 - **this**: the this keyword works like the self keyword of Python in the definition of a class. **this** is used as a reference to the instance of a class or to an object itself.
 
