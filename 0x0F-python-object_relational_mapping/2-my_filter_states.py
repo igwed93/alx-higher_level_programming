@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-script that lists all states that starts with N
+script that lists all states that starts with the user's input
 from the database hbtn_0e_0_usa
 """
 
