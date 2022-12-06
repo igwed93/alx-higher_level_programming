@@ -24,6 +24,7 @@ if __name__ == "__main__":
                     WHERE name LIKE '{:s}' ORDER BY id ASC".format(argv[4])
     cursor.execute(sql_cmd)
     for state in cursor.fetchall():
-        print(state)
+        if state[1] == argv[4]:
+            print(state)
     cursor.close()
     db.close()
