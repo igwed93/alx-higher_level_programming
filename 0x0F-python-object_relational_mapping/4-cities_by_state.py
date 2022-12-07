@@ -14,9 +14,10 @@ if __name__ == "__main__":
                          db=argv[3])
     # create cursor to execute queries using SQL
     c = db.cursor()
-    sql_cmd = "SELECT cities.id, states.name, cities.name \
+    sql_cmd = "SELECT cities.id, cities.name, states.name \
                FROM cities \
                INNER JOIN states ON cities.state_id = states.id"
+
     c.execute(sql_cmd)
     for city in c.fetchall():
         print(city)
