@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """
 create state "California" with city attribute "San Francisco"
 parameters given to script: username, password, database
