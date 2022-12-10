@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 
 """
-this sript lists all State objects that contain
-the letter a from the database hbtn_0e_6_usa
+adds the State object 'Louisiana' to the database hbtn_0e_6_usa
 """
 
 from sys import argv
@@ -22,7 +21,11 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # query python instances in database that contain the letter 'a'
-    for obj in session.query(State).filter(
-            State.name.like('%a%')).order_by(State.id):
-        print('{:d}: {:s}'.format(obj.id, obj.name))
+    # add new_state to the database & commit changes
+    new_state = State(name='Louisiana')
+    session.add(new_state)
+    session.commit()
+
+    print('{:d}'.format(new_state.id))
+
+    session.close()
