@@ -16,8 +16,8 @@ if __name__ == "__main__":
         letter = ""
     else:
         letter = argv[1]
-    payload = {"q": letter}
-    r = requests.post(url, params=payload)
+    payload = {'q': letter}
+    r = requests.post(url, data=payload)
 
     try:
         dic = r.json()
