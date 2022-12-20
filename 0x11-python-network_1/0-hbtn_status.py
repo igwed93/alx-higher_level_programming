@@ -10,7 +10,6 @@ Usage: ./0-hbtn_status.py | cat -e
 if __name__ == "__main__":
     from urllib.request import Request, urlopen
 
-
     with urlopen('https://alx-intranet.hbtn.io/status') as response:
         content = response.read()
 
