@@ -8,7 +8,6 @@ usage: ./100-github_commits.py [github_repo] [github_owner]
 
 from sys import argv
 import requests
-from requests.auth import HTTPBasicAuth
 
 
 if __name__ == "___main__":
